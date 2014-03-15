@@ -16,7 +16,7 @@
 		<input type="date" ng-model="view.editableValue.dueDate">
 	</td>
 	<td ng-show="view.editorEnabled">
-		<select ng-model="view.editableValue.groupMember" ng-options="(u.firstName+' '+u.lastName) as view.editableValue.groupMember for u in users"></select>
+		<select ng-model="view.editableValue.groupMember" ng-options="(u.firstName+' '+u.lastName) as (u.firstName+' '+u.lastName) for u in users"></select>
 	</td>
 	<td ng-show="view.editorEnabled">
 		<input ng-model="view.editableValue.priority">
