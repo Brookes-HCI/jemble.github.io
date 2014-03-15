@@ -19,10 +19,10 @@
 		<select ng-model="view.editableValue.groupMember" ng-options="(u.firstName+' '+u.lastName) as (u.firstName+' '+u.lastName) for u in users"></select>
 	</td>
 	<td ng-show="view.editorEnabled">
-		<input ng-model="view.editableValue.priority">
+		<select ng-model="view.editableValue.priority" ng-options="p for p in priorities"></select>
 	</td>
 	<td ng-show="view.editorEnabled">
-		<input ng-model="view.editableValue.status">
+		<select ng-model="view.editableValue.status" ng-options="s for s in statuses"></select>
 	</td>
 	<td>
 		<button ng-show="view.editorEnabled" class="btn btn-default" ng-click="save()">save</button>

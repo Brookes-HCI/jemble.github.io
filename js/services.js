@@ -49,6 +49,18 @@ app.service('TaskService',function(){
 			"groupMember":"David Hale"
 		}
 	];
+
+	var priorities = ["high","med","low"];
+	var status = ["open", "closed"];
+
+	this.getStatus = function(){
+		return status;
+	}
+
+	this.getPriorities = function(){
+		return priorities;
+	}
+
 	this.addTask = function(task){
 		tasks.push(task);
 	}

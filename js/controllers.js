@@ -8,19 +8,19 @@ app.controller('HomeCtrl', function($scope, GroupService, TaskService){
 })
 app.controller('TasksCtrl',function($scope,TaskService,GroupService){
 	$scope.tasks = TaskService.getTasks();
-
+	$scope.statuses = TaskService.getStatus();
+	
 	$scope.addTask = function(task){
 		task.status = "open";
 		TaskService.addTask(task);
 		$scope.task = '';
 	}
-
+	
 	$scope.removeTask = function(task){
 		TaskService.removeTask(task);
 	}
 
 	$scope.users = GroupService.getUsers();
-
 })
 app.controller('GroupCtrl',function($scope, GroupService){
 	$scope.users = GroupService.getUsers();
@@ -33,4 +33,5 @@ app.controller('GroupCtrl',function($scope, GroupService){
 	$scope.removeUser = function(user){
 		GroupService.removeUser(user);
 	}
+
 })
