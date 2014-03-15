@@ -1,0 +1,23 @@
+<form role="form" ng-model="newUser" name="personForm">
+	<div class="form-group">
+		<label for="group_fName_input">First Name</label>
+		<input type="text" class="form-control" name="firstName" id="group_fName_input" required ng-model="newUser.firstName"/>
+		<span class="error" ng-show="personForm.firstName.$error.required">*</span>
+	</div>
+	<div class="form-group">
+		<label for="group_lName_input">Last Name</label>
+		<input type="text" class="form-control" name="lastName" id="group_lName_input" required ng-model="newUser.lastName"/>
+		<span class="error" ng-show="personForm.lastName.$error.required">*</span>
+	</div>
+	<button type="submit" class="btn btn-default" ng-click="addUser(newUser)">Add</button>
+</form>
+
+<table class="table">
+	<thead>
+		<th>First Name</th>
+		<th>Last Name</th>
+	</thead>
+	<tr ng-repeat="user in users">
+		<td>{{user.firstName}}</td><td>{{user.lastName}}</td>
+	</tr>
+</table>
