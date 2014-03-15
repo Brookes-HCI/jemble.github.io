@@ -1,1 +1,28 @@
-<p>this is the partial for home</p>
+<h2>Group Members</h2>
+<table class="table">
+	<thead>
+		<th>First Name</th>
+		<th>Last Name</th>
+	</thead>
+	<tr ng-repeat="user in users">
+		<td>{{user.firstName}}</td><td>{{user.lastName}}</td>
+	</tr>
+</table>
+
+<h2>Tasks</h2>
+<table class="table">
+	<thead>
+		<th>Task Name</th>
+		<th>Due Date</th>
+		<th>Group Member</th>
+		<th>Priority</th>
+		<th>Status</th>
+	</thead>
+	<tr ng-repeat="task in tasks">
+		<td>{{task.name}}</td>
+		<td>{{task.dueDate}}</td>
+		<td>{{task.groupMember.firstName}} {{task.groupMember.lastName}}</td>
+		<td>{{task.priority}}</td>
+		<td>{{task.status}}</td>
+	</tr>
+</table>

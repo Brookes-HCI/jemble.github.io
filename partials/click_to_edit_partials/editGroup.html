@@ -1,0 +1,20 @@
+<tr>
+	<td ng-hide="view.editorEnabled">
+		{{value.firstName}}
+	</td>
+	<td ng-hide="view.editorEnabled">{{value.lastName}}</td>
+	<td ng-hide="view.editorEnabled">
+		<button  class="btn btn-default" ng-click="remUser(user)">remove</button>
+		<button class="btn btn-default" ng-click="enableEditor()">edit</button>
+	</td>
+	<td ng-show="view.editorEnabled">
+		<input ng-model="view.editableValue.firstName">	
+	</td>
+	<td ng-show="view.editorEnabled">
+		<input ng-model="view.editableValue.lastName">
+	</td>
+	<td>
+		<button ng-show="view.editorEnabled" class="btn btn-default" ng-click="save()">save</button>
+		<button ng-show="view.editorEnabled" class="btn btn-default" ng-click="disableEditor()">cancel</button>
+	</td>
+</tr>

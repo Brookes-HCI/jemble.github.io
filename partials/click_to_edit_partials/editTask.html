@@ -1,0 +1,31 @@
+<tr>
+	<td ng-hide="view.editorEnabled">{{value.name}}</td>
+	<td ng-hide="view.editorEnabled">{{value.dueDate}}</td>
+	<td ng-hide="view.editorEnabled">{{value.groupMember.firstName}} {{value.groupMember.lastName}}</td>
+	<td ng-hide="view.editorEnabled">{{value.priority}}</td>
+	<td ng-hide="view.editorEnabled">{{value.status}}</td>
+	<td ng-hide="view.editorEnabled">
+		<button  class="btn btn-default" ng-click="remUser(t)">remove</button>
+		<button class="btn btn-default" ng-click="enableEditor()">edit</button>
+	</td>
+
+	<td ng-show="view.editorEnabled">
+		<input ng-model="view.editableValue.name">	
+	</td>
+	<td ng-show="view.editorEnabled">
+		<input type="date" ng-model="view.editableValue.dueDate">
+	</td>
+	<td ng-show="view.editorEnabled">
+		<input ng-model="view.editableValue.groupMember">
+	</td>
+	<td ng-show="view.editorEnabled">
+		<input ng-model="view.editableValue.priority">
+	</td>
+	<td ng-show="view.editorEnabled">
+		<input ng-model="view.editableValue.status">
+	</td>
+	<td>
+		<button ng-show="view.editorEnabled" class="btn btn-default" ng-click="save()">save</button>
+		<button ng-show="view.editorEnabled" class="btn btn-default" ng-click="disableEditor()">cancel</button>
+	</td>
+</tr>
