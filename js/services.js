@@ -39,14 +39,14 @@ app.service('TaskService',function(){
 			"dueDate":"2014/03/01",
 			"status":"open",
 			"priority":"high",
-			"groupMember":{"firstName":"Jeremy","lastName":"Bourgein"}
+			"groupMember":"Jeremy Bourgein"
 		},
 		{
 			"name":"Task 2",
 			"dueDate":"2014/03/05",
 			"status":"open",
 			"priority":"low",
-			"groupMember":{"firstName":"David","lastName":"Hale"}
+			"groupMember":"David Hale"
 		}
 	];
 	this.addTask = function(task){

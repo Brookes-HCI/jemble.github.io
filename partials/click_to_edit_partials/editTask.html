@@ -1,7 +1,7 @@
 <tr>
 	<td ng-hide="view.editorEnabled">{{value.name}}</td>
 	<td ng-hide="view.editorEnabled">{{value.dueDate}}</td>
-	<td ng-hide="view.editorEnabled">{{value.groupMember.firstName}} {{value.groupMember.lastName}}</td>
+	<td ng-hide="view.editorEnabled">{{value.groupMember}}</td>
 	<td ng-hide="view.editorEnabled">{{value.priority}}</td>
 	<td ng-hide="view.editorEnabled">{{value.status}}</td>
 	<td ng-hide="view.editorEnabled">
@@ -16,7 +16,7 @@
 		<input type="date" ng-model="view.editableValue.dueDate">
 	</td>
 	<td ng-show="view.editorEnabled">
-		<input ng-model="view.editableValue.groupMember">
+		<select ng-model="view.editableValue.groupMember" ng-options="(u.firstName+' '+u.lastName) as view.editableValue.groupMember for u in users"></select>
 	</td>
 	<td ng-show="view.editorEnabled">
 		<input ng-model="view.editableValue.priority">

@@ -26,6 +26,8 @@ app.directive('clickToEditGroup',function(){
 		controller: function($scope,GroupService){
 
 			var origVal = angular.copy($scope.value); //copy so that we break the binding
+			$scope.users = GroupService.getUsers();
+			
 			$scope.view = {
 				editableValue:$scope.value,
 				editorEnabled:false

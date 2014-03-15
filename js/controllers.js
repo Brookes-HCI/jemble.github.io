@@ -10,6 +10,7 @@ app.controller('TasksCtrl',function($scope,TaskService,GroupService){
 	$scope.tasks = TaskService.getTasks();
 
 	$scope.addTask = function(task){
+		task.status = "open";
 		TaskService.addTask(task);
 		$scope.task = '';
 	}
