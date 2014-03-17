@@ -3,12 +3,14 @@
 /*Directives*/
 
 app.directive('clickToEditGroup',function(){
+	var type;
 	return {
 		restrict: 'A',
 		replace: true,
 		// template: '<tr ng-include="$parent.getTemplateUrl()"></tr>',
 		// templateUrl:'partials/click_to_edit_partials/editGroup.html',
 		templateUrl:function(elem,attrs){
+			type = attrs.temp;
 			switch(attrs.temp){
 				case "group":
 				return 'partials/click_to_edit_partials/editGroup.html';
@@ -55,7 +57,15 @@ app.directive('clickToEditGroup',function(){
             }
 
             $scope.remUser = function(){
-            	GroupService.removeUser($scope.value);
+            	switch (type){
+            		case "group":
+            		GroupService.removeUser($scope.value);
+            		break;
+            		case "tasks":
+            		TaskService.removeTask($scope.value);
+            		break;
+            	}
+            	
             }
 		},
 
