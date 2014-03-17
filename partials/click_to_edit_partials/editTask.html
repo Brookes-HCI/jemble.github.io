@@ -5,8 +5,8 @@
 	<td ng-hide="view.editorEnabled">{{value.priority}}</td>
 	<td ng-hide="view.editorEnabled">{{value.status}}</td>
 	<td ng-hide="view.editorEnabled" style="border:none">
-		<button  class="btn btn-default" ng-click="remUser(t)">remove</button>
-		<button class="btn btn-default" ng-click="enableEditor()">edit</button>
+		<button  class="btn btn-default" ng-click="remUser(t)"><span class="glyphicon glyphicon-trash"></span></button>
+		<button class="btn btn-default" ng-click="enableEditor()"><span class="glyphicon glyphicon-pencil"></span></button>
 	</td>
 
 	<td style="background-color:#e18a07" ng-show="view.editorEnabled">
@@ -25,7 +25,7 @@
 		<select ng-model="view.editableValue.status" ng-options="s for s in statuses"></select>
 	</td>
 	<td style="border:none">
-		<button ng-show="view.editorEnabled" class="btn btn-default" ng-click="save()">save</button>
-		<button ng-show="view.editorEnabled" class="btn btn-default" ng-click="disableEditor()">cancel</button>
+		<button ng-show="view.editorEnabled" class="btn btn-default" ng-click="save()"><span class="glyphicon glyphicon-ok"></span></button>
+		<button ng-show="view.editorEnabled" class="btn btn-default" ng-click="disableEditor()"><span class="glyphicon glyphicon-remove"></span></button>
 	</td>
 </tr>
