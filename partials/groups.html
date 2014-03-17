@@ -1,27 +1,32 @@
-<h2>Add Group Member</h2>
+<div class="row">
+	<div class="col-md-8">
+		<h2>Add Group Member</h2>
 
-<form role="form" ng-model="newUser" name="personForm">
-	<div class="form-group">
-		<label for="group_fName_input">First Name</label>
-		<input type="text" class="form-control" name="firstName" id="group_fName_input" required ng-model="newUser.firstName"/>
-		<span class="error" ng-show="personForm.firstName.$error.required">*</span>
+		<form role="form" ng-model="newUser" name="personForm">
+			<div class="form-group">
+				<label for="group_fName_input">First Name</label>
+				<input type="text" class="form-control" name="firstName" id="group_fName_input" required ng-model="newUser.firstName"/>
+				<span class="error" ng-show="personForm.firstName.$error.required">*</span>
+			</div>
+			<div class="form-group">
+				<label for="group_lName_input">Last Name</label>
+				<input type="text" class="form-control" name="lastName" id="group_lName_input" required ng-model="newUser.lastName"/>
+				<span class="error" ng-show="personForm.lastName.$error.required">*</span>
+			</div>
+			<button type="submit" class="btn btn-default" ng-click="addUser(newUser)">Add</button>
+		</form>
 	</div>
-	<div class="form-group">
-		<label for="group_lName_input">Last Name</label>
-		<input type="text" class="form-control" name="lastName" id="group_lName_input" required ng-model="newUser.lastName"/>
-		<span class="error" ng-show="personForm.lastName.$error.required">*</span>
-	</div>
-	<button type="submit" class="btn btn-default" ng-click="addUser(newUser)">Add</button>
-</form>
-
-<h2>Edit Group</h2>
-<table class="table">
-	<thead>
-		<th>First Name</th>
-		<th>Last Name</th>
-	</thead>
-	<tr ng-repeat="user in users" click-to-edit-group="user" temp="group">
-	
+</div>
+<div class="row">
+	<h2>Edit Group</h2>
+	<table class="table">
+		<thead>
+			<th>First Name</th>
+			<th>Last Name</th>
+		</thead>
+		<tr ng-repeat="user in users" click-to-edit-group="user" temp="group">
 		
-	</tr>
-</table>
+			
+		</tr>
+	</table>
+</div>

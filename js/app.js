@@ -3,7 +3,8 @@
 
 // Declare app level module which depends on filters, and services
 var app = angular.module('uniGroupApp', [
-  'ngRoute'
+  'ngRoute',
+  'ui.bootstrap'
 ]).
 config(['$routeProvider','$locationProvider', function($routeProvider,$locationProvider) {
   $locationProvider.html5Mode(false);

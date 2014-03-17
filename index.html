@@ -4,18 +4,20 @@
   <meta charset="utf-8">
   <title>My AngularJS App</title>
   <link rel="stylesheet" href="css/bootstrap.css"/>
+  <link rel="stylesheet" href="css/unigroup.css"/>
 </head>
 <body>
-  <div class="container">
-    <div class="navbar navbar-default" role="navigation">
-      <div class="container-fluid">
+  <div class="container unigroup">
+    <h1>UniGroup</h1>
+    <header class="navbar navbar-default" role="navigation">
+      <div class="navbar-inner">
           <ul class="nav navbar-nav">
-            <li><a href="#/">home</a></li>
+            <li><a href="#/">Home</a></li>
             <li><a href="#/tasks">Tasks</a></li>
-            <li><a href="#/groups">groups</a></li>
+            <li><a href="#/groups">Groups</a></li>
           </ul>
-      </div>
-    </div>
+      </div>  
+    </header>
     <div ng-view></div>
   </div>
 

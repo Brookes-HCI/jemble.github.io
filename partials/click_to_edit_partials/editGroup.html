@@ -3,17 +3,17 @@
 		{{value.firstName}}
 	</td>
 	<td ng-hide="view.editorEnabled">{{value.lastName}}</td>
-	<td ng-hide="view.editorEnabled">
+	<td ng-hide="view.editorEnabled" style="border:none">
 		<button  class="btn btn-default" ng-click="remUser(user)">remove</button>
 		<button class="btn btn-default" ng-click="enableEditor()">edit</button>
 	</td>
-	<td ng-show="view.editorEnabled">
+	<td style="background-color:#e18a07" ng-show="view.editorEnabled">
 		<input ng-model="view.editableValue.firstName">	
 	</td>
-	<td ng-show="view.editorEnabled">
+	<td style="background-color:#e18a07" ng-show="view.editorEnabled">
 		<input ng-model="view.editableValue.lastName">
 	</td>
-	<td>
+	<td style="border:none">
 		<button ng-show="view.editorEnabled" class="btn btn-default" ng-click="save()">save</button>
 		<button ng-show="view.editorEnabled" class="btn btn-default" ng-click="disableEditor()">cancel</button>
 	</td>

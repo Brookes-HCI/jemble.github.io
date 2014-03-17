@@ -1,46 +1,51 @@
-<h2>Add Task</h2>
+<div class="row">
+	<div class="col-md-8">
+		<h2>Add Task</h2>
 
-<form role="form" ng-model="newTask" name="taskForm">
-	<div class="form-group">
-		<label for="group_taskName_input">Task Name</label>
-		<input type="text" class="form-control" name="taskName" id="group_taskName_input" required ng-model="task.name"/>
-		<span class="error" ng-show="taskForm.taskName.$error.required">*</span>
+		<form role="form" ng-model="newTask" name="taskForm">
+			<div class="form-group">
+				<label for="group_taskName_input">Task Name</label>
+				<input type="text" class="form-control" name="taskName" id="group_taskName_input" required ng-model="task.name"/>
+				<span class="error" ng-show="taskForm.taskName.$error.required">*</span>
+			</div>
+			<div class="form-group">
+				<label for="group_date_input">Date</label>
+				<input type="date" class="form-control" name="date" id="group_date_input" required ng-model="task.dueDate"/>
+				<span class="error" ng-show="taskForm.date.$error.required">*</span>
+			</div>
+			<div class="form-group">
+				<label for="group_member_input">Group Member</label>
+				<select ng-model="task.groupMember" ng-options="(u.firstName+' '+u.lastName) for u in users"></select>
+			</div>
+			<div class="form-group">
+				<label for="radio_priority">Priority</label>
+				<div class="radio">
+					<input type="radio" name="radio_priority" ng-model="task.priority" value="high">high
+				</div>
+				<div class="radio">
+					<input type="radio" name="radio_priority" ng-model="task.priority" value="med">med
+				</div>
+				<div class="radio">
+					<input type="radio" name="radio_priority" ng-model="task.priority" value="low">low
+				</div>
+			</div>
+			<button type="submit" class="btn btn-default pull-right" ng-click="addTask(task)">Add</button>
+		</form>
 	</div>
-	<div class="form-group">
-		<label for="group_date_input">Date</label>
-		<input type="date" class="form-control" name="date" id="group_date_input" required ng-model="task.dueDate"/>
-		<span class="error" ng-show="taskForm.date.$error.required">*</span>
-	</div>
-	<div class="form-group">
-		<label for="group_member_input">Group Member</label>
-		<select ng-model="task.groupMember" ng-options="(u.firstName+' '+u.lastName) for u in users"></select>
-	</div>
-	<div class="form-group">
-		<label for="radio_priority">Priority</label>
-		<div class="radio">
-			<input type="radio" name="radio_priority" ng-model="task.priority" value="high">high
-		</div>
-		<div class="radio">
-			<input type="radio" name="radio_priority" ng-model="task.priority" value="med">med
-		</div>
-		<div class="radio">
-			<input type="radio" name="radio_priority" ng-model="task.priority" value="low">low
-		</div>
-	</div>
-	<button type="submit" class="btn btn-default" ng-click="addTask(task)">Add</button>
-</form>
-
-<h2>Edit Task</h2>
-<table class="table">
-	<thead>
-		<th>Task Name</th>
-		<th>Due Date</th>
-		<th>Group Member</th>
-		<th>Priority</th>
-		<th>Status</th>
-	</thead>
-	<tr ng-repeat="task in tasks" click-to-edit-group="task" temp="tasks">
-	
+</div>
+<div class="row">
+	<h2>Edit Task</h2>
+	<table class="table">
+		<thead>
+			<th>Task Name</th>
+			<th>Due Date</th>
+			<th>Group Member</th>
+			<th>Priority</th>
+			<th>Status</th>
+		</thead>
+		<tr ng-repeat="task in tasks" click-to-edit-group="task" temp="tasks">
 		
-	</tr>
-</table>
+			
+		</tr>
+	</table>
+</div>
