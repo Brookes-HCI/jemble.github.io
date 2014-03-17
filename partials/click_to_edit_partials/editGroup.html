@@ -1,11 +1,19 @@
 <tr>
 	<td ng-hide="view.editorEnabled">
+		<span ng-show="value.isLeader" class="glyphicon glyphicon-star"></span>
+		<span ng-hide="value.isLeader" class="glyphicon glyphicon-star-empty"></span>
+	</td>
+		<td ng-hide="view.editorEnabled">
 		{{value.firstName}}
 	</td>
 	<td ng-hide="view.editorEnabled">{{value.lastName}}</td>
 	<td ng-hide="view.editorEnabled" style="border:none">
 		<button  class="btn btn-default" ng-click="remUser(user)"><span class="glyphicon glyphicon-trash"></span></button>
 		<button class="btn btn-default" ng-click="enableEditor()"><span class="glyphicon glyphicon-pencil"></span></button>
+	</td>
+
+	<td style="background-color:#e18a07" ng-show="view.editorEnabled">
+		<input type="checkbox" ng-model="view.editableValue.isLeader">
 	</td>
 	<td style="background-color:#e18a07" ng-show="view.editorEnabled">
 		<input ng-model="view.editableValue.firstName">	

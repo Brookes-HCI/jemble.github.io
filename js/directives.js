@@ -40,6 +40,12 @@ app.directive('clickToEditGroup',function(){
 				editableValue:$scope.value,
 				editorEnabled:false
 			};
+
+			$scope.clearLeaders = function(){
+				//this is here so that the binding works
+				
+			};
+
 			$scope.enableEditor = function(){
 				origVal = angular.copy($scope.value); //copy so that we break the binding
 				$scope.view.editorEnabled = true;
@@ -50,9 +56,15 @@ app.directive('clickToEditGroup',function(){
             	$scope.value = origVal;
                 $scope.view.editorEnabled = false;
             };
-
             $scope.save = function(){
+            	var isLeader = $scope.view.editableValue.isLeader;
+            	console.log(isLeader);
+            	if(type=="group"){
+            		console.log("leaders");
+            		GroupService.clearLeaders();
+            	}
             	$scope.value = $scope.view.editableValue;
+            	$scope.value.isLeader = isLeader;
             	$scope.view.editorEnabled = false;
             }
 

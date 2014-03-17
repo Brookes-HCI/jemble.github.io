@@ -7,12 +7,21 @@ app.service('GroupService',function(){
 			{
 				"firstName":"Jeremy",
 				"lastName":"Bourgein",
+				"isLeader":true
 			},
 			{
 				"firstName":"David",
-				"lastName":"Hale"
+				"lastName":"Hale",
+				"isLeader":false
 			}
 		];
+
+		this.clearLeaders = function(){
+			for(var person in users){
+				// console.log(users[person].isLeader);
+				users[person].isLeader = false;
+			}
+		}
 
 		this.addUser = function(user){
 			var newUser = {
