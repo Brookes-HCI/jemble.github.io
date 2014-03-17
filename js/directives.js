@@ -16,6 +16,9 @@ app.directive('clickToEditGroup',function(){
 				case "tasks":
 				return 'partials/click_to_edit_partials/editTask.html';
 				break;
+				case "proj":
+				return 'partials/click_to_edit_partials/editHome.html';
+				break;
 			}
 			//return 'partials/click_to_edit_partials/editGroup.html'
 		},
@@ -29,11 +32,14 @@ app.directive('clickToEditGroup',function(){
 			$scope.users = GroupService.getUsers();
 			$scope.priorities = TaskService.getPriorities();
 			$scope.statuses = TaskService.getStatus();
+			$scope.project = "Your project name";
+
 			$scope.view = {
 				editableValue:$scope.value,
 				editorEnabled:false
 			};
 			$scope.enableEditor = function(){
+				origVal = angular.copy($scope.value); //copy so that we break the binding
 				$scope.view.editorEnabled = true;
 				$scope.view.editableValue = $scope.value;
 			}

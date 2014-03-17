@@ -5,6 +5,7 @@
 app.controller('HomeCtrl', function($scope, GroupService, TaskService){
 	$scope.users = GroupService.getUsers();
 	$scope.tasks = TaskService.getTasks();
+	$scope.project = "your project name";
 })
 app.controller('TasksCtrl',function($scope,TaskService,GroupService){
 	$scope.tasks = TaskService.getTasks();
