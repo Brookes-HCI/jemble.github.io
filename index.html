@@ -2,19 +2,19 @@
 <html lang="en" ng-app="uniGroupApp">
 <head>
   <meta charset="utf-8">
-  <title>My AngularJS App</title>
+  <title>UniGroup</title>
   <link rel="stylesheet" href="css/bootstrap.css"/>
   <link rel="stylesheet" href="css/unigroup.css"/>
 </head>
 <body style="overflow:scroll">
   <div class="container unigroup">
     <h1>UniGroup</h1>
-    <header class="navbar navbar-default" role="navigation">
+    <header class="navbar navbar-custom" role="navigation">
       <div class="navbar-inner">
-          <ul class="nav navbar-nav">
-            <li class="unigroupNav"><a href="#/">Home</a></li>
-            <li><a href="#/tasks">Tasks</a></li>
-            <li><a href="#/groups">Groups</a></li>
+          <ul class="nav navbar-nav" ng-controller="NavCtrl">
+            <li ng-class="{active: location.path() == '/home'}"><a href="#/">Home</a></li>
+            <li ng-class="{active: location.path() == '/tasks'}"><a  href="#/tasks">Tasks</a></li>
+            <li ng-class="{active: location.path() == '/groups'}" ><a href="#/groups">Groups</a></li>
           </ul>
       </div>  
     </header>

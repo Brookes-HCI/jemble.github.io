@@ -7,6 +7,12 @@ app.controller('HomeCtrl', function($scope, GroupService, TaskService){
 	$scope.tasks = TaskService.getTasks();
 	$scope.project = "your project name";
 })
+
+app.controller('NavCtrl',function($scope,$location){
+	$scope.location = $location;
+	console.log($scope.location);
+})
+
 app.controller('TasksCtrl',function($scope,TaskService,GroupService){
 	$scope.tasks = TaskService.getTasks();
 	$scope.statuses = TaskService.getStatus();

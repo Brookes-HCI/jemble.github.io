@@ -66,6 +66,7 @@ app.directive('clickToEditGroup',function(){
             	$scope.value = $scope.view.editableValue;
             	$scope.value.isLeader = isLeader;
             	$scope.view.editorEnabled = false;
+            	
             }
 
             $scope.remUser = function(){
