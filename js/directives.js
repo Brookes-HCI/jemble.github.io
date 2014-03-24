@@ -28,7 +28,7 @@ app.directive('clickToEditGroup',function(){
 			value:'=clickToEditGroup'
 		},
 
-		controller: function($scope,GroupService, TaskService){
+		controller: function($scope,$modal,GroupService, TaskService){
 
 			var origVal = angular.copy($scope.value); //copy so that we break the binding
 			$scope.users = GroupService.getUsers();
@@ -68,18 +68,42 @@ app.directive('clickToEditGroup',function(){
             	$scope.view.editorEnabled = false;
             }
 
+            $scope.ok = function(){
+            	console.log("ok");
+            }
+
             $scope.remUser = function(){
-            	var conf = confirm("Are you sure you want to delete this entry?");
-            	if(conf){
-	            	switch (type){
-	            		case "group":
-	            		GroupService.removeUser($scope.value);
-	            		break;
-	            		case "tasks":
-	            		TaskService.removeTask($scope.value);
-	            		break;
-	            	}
-	            }
+            	console.log($scope.value);
+            	var modal = $modal.open({
+            		template:"<div style='padding:20px;font-align:center'><h3>Are you sure you want to delete this item{{project}}?</h3><button ng-click=\"ok()\" class='btn btn-primary'>Yes</button><button ng-click='cancel()' class='btn btn-default'>Cancel</button><div>",
+            		controller:function($scope,$modalInstance){
+            			$scope.ok = function(){
+            				switch (type){
+		            			case "group":
+		            			GroupService.removeUser($scope.value);
+		            			break;
+		            			case "tasks":
+		            			TaskService.removeTask($scope.value);
+		            			break;
+		            		}
+		            		$modalInstance.dismiss('cancel');
+            			}
+            			$scope.cancel = function(){
+            				$modalInstance.dismiss('cancel');
+            			}
+            		}
+            	});
+            	// var conf = confirm("Are you sure you want to delete this entry?");
+            	// if(conf){
+	            // 	switch (type){
+	            // 		case "group":
+	            // 		GroupService.removeUser($scope.value);
+	            // 		break;
+	            // 		case "tasks":
+	            // 		TaskService.removeTask($scope.value);
+	            // 		break;
+	            // 	}
+	            // }
             	
             }
 		},

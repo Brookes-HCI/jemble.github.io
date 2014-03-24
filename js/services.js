@@ -37,6 +37,7 @@ app.service('GroupService',function(){
 		}
 		this.removeUser = function(item){
 			 var index=users.indexOf(item)
+			 console.log('index: '+index);
       		 users.splice(index,1); 
 		}
 })
