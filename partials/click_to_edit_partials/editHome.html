@@ -1,5 +1,4 @@
  <div>
- 	<div>{{value}}</div>
  	<span ng-hide="view.editorEnabled"><h2>Project name: {{value}}
  		<button class="btn btn-default" ng-click="enableEditor()"><span class="glyphicon glyphicon-pencil"></span></button></h2></span>
  <span ng-show="view.editorEnabled"><h2>Project name: <input style="background-color:#e18a07" ng-model="view.editableValue"/><button class="btn btn-default" ng-click="save()"><span class="glyphicon glyphicon-ok"></span></button><button class="btn btn-default" ng-click="disableEditor()"><span class="glyphicon glyphicon-remove"</span></button></h2></span>

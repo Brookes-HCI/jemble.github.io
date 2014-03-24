@@ -6,15 +6,14 @@
 			<div class="form-group">
 				<label for="group_taskName_input">Task Name</label>
 				<input type="text" class="form-control" name="taskName" id="group_taskName_input" required ng-model="task.name"/>
-				<span class="error" ng-show="taskForm.taskName.$error.required">*</span>
 			</div>
 			<div class="form-group">
 				<label for="group_date_input">Date</label>
 				<input type="date" class="form-control" name="date" id="group_date_input" required ng-model="task.dueDate"/>
-				<span class="error" ng-show="taskForm.date.$error.required">*</span>
 			</div>
 			<div class="form-group">
 				<label for="group_member_input">Group Member</label>
+				<br />
 				<select ng-model="task.groupMember" ng-options="(u.firstName+' '+u.lastName) for u in users"></select>
 			</div>
 			<div class="form-group">
