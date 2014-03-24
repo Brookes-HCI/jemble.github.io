@@ -16,13 +16,13 @@
 		<input type="date" ng-model="view.editableValue.dueDate">
 	</td>
 	<td style="background-color:#e18a07" ng-show="view.editorEnabled">
-		<select ng-model="view.editableValue.groupMember" ng-options="(u.firstName+' '+u.lastName) as (u.firstName+' '+u.lastName) for u in users"></select>
+		<select class="form-control"  ng-model="view.editableValue.groupMember" ng-options="(u.firstName+' '+u.lastName) as (u.firstName+' '+u.lastName) for u in users"></select>
 	</td>
 	<td style="background-color:#e18a07" ng-show="view.editorEnabled">
-		<select ng-model="view.editableValue.priority" ng-options="p for p in priorities"></select>
+		<select class="form-control" ng-model="view.editableValue.priority" ng-options="p for p in priorities"></select>
 	</td>
 	<td style="background-color:#e18a07" ng-show="view.editorEnabled">
-		<select ng-model="view.editableValue.status" ng-options="s for s in statuses"></select>
+		<select class="form-control" ng-model="view.editableValue.status" ng-options="s for s in statuses"></select>
 	</td>
 	<td style="border:none">
 		<button ng-show="view.editorEnabled" class="btn btn-default" ng-click="save()"><span class="glyphicon glyphicon-ok"></span></button>
