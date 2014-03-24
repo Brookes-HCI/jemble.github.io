@@ -26,7 +26,7 @@ app.service('GroupService',function(){
 		this.addUser = function(user){
 			var newUser = {
 				"firstName":user.firstName,
-				"lastName":user.lastName
+				"lastName":user.lastName,
 			}
 
 			users.push(newUser);
@@ -48,7 +48,7 @@ app.service('TaskService',function(){
 			"dueDate":"2014/03/01",
 			"status":"open",
 			"priority":"high",
-			"groupMember":"Jeremy Bourgein"
+			"groupMember":"Jeremy Bourgein",
 		},
 		{
 			"name":"Task 2",
@@ -71,6 +71,10 @@ app.service('TaskService',function(){
 	}
 
 	this.addTask = function(task){
+		
+		var groupMember = task.groupMember.firstName+' '+task.groupMember.lastName;
+		console.log(groupMember);
+		task.groupMember = groupMember;
 		tasks.push(task);
 	}
 	this.getTasks = function(){
