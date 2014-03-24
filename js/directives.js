@@ -69,14 +69,17 @@ app.directive('clickToEditGroup',function(){
             }
 
             $scope.remUser = function(){
-            	switch (type){
-            		case "group":
-            		GroupService.removeUser($scope.value);
-            		break;
-            		case "tasks":
-            		TaskService.removeTask($scope.value);
-            		break;
-            	}
+            	var conf = confirm("Are you sure you want to delete this entry?");
+            	if(conf){
+	            	switch (type){
+	            		case "group":
+	            		GroupService.removeUser($scope.value);
+	            		break;
+	            		case "tasks":
+	            		TaskService.removeTask($scope.value);
+	            		break;
+	            	}
+	            }
             	
             }
 		},
