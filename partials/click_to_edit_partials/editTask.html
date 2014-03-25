@@ -1,6 +1,6 @@
 <tr >
 	<td ng-hide="view.editorEnabled">{{value.name}}</td>
-	<td ng-hide="view.editorEnabled">{{value.dueDate}}</td>
+	<td ng-hide="view.editorEnabled">{{value.date}}</td>
 	<td ng-hide="view.editorEnabled">{{value.groupMember}}</td>
 	<td ng-hide="view.editorEnabled">{{value.priority}}</td>
 	<td ng-hide="view.editorEnabled">{{value.status}}</td>
@@ -13,7 +13,8 @@
 		<input ng-model="view.editableValue.name">	
 	</td>
 	<td style="background-color:#e18a07" ng-show="view.editorEnabled">
-		<input type="date" ng-model="view.editableValue.dueDate">
+		<input type="text" class="form-control" datepicker-popup="dd-MMMM-yyyy" ng-model="view.editableValue.date" ng-required="true" close-text="Close" />
+		
 	</td>
 	<td style="background-color:#e18a07" ng-show="view.editorEnabled">
 		<select class="form-control"  ng-model="view.editableValue.groupMember" ng-options="(u.firstName+' '+u.lastName) as (u.firstName+' '+u.lastName) for u in users"></select>

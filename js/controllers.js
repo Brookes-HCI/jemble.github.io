@@ -13,13 +13,17 @@ app.controller('NavCtrl',function($scope,$location){
 	console.log($scope.location);
 })
 
-app.controller('TasksCtrl',function($scope,TaskService,GroupService){
+app.controller('TasksCtrl',function($scope,$filter,TaskService,GroupService){
 	$scope.tasks = TaskService.getTasks();
 	$scope.statuses = TaskService.getStatus();
 	
 	$scope.addTask = function(task){
+		
+		task.date = $filter('date')(task.date, "dd-MMMM-yyyy");
+		
 		task.status = "open";
 		TaskService.addTask(task);
+		console.log(task);
 		$scope.task = '';
 	}
 	
