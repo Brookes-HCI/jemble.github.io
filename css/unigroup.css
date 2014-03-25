@@ -5,6 +5,7 @@
 	color:#603299 !important;
 };
 
+/*******************TABLE ANIMATIONS STYLES****************/  
 .phone-listing.ng-enter,
 .phone-listing.ng-leave,
 .phone-listing.ng-move {
@@ -39,6 +40,7 @@
   padding-bottom: 0;
 }
 
+/***********CUSTOM NAVBAR STYLES****************/
 .navbar-custom {
   background-color: #f8f8f8;
   border-color: #e7e7e7;

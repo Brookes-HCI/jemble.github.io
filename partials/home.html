@@ -1,33 +1,35 @@
-<div click-to-edit-group="project" temp="proj"></div>
+<div class="row">
+	<div click-to-edit-group="project" temp="proj"></div>
 
-<a href='#/tasks'><h2>Tasks</h2></a>
-<table class="table table-bordered">
-	<thead>
-		<th>Task Name</th>
-		<th>Due Date</th>
-		<th>Group Member</th>
-		<th>Priority</th>
-		<th>Status</th>
-	</thead>
-	<tr ng-repeat="task in tasks">
-		<td>{{task.name}}</td>
-		<td>{{task.date}}</td>
-		<td>{{task.groupMember}}</td>
-		<td>{{task.priority}}</td>
-		<td>{{task.status}}</td>
-	</tr>
-</table>
+	<a href='#/tasks'><h2>Tasks</h2></a>
+	<table class="table table-bordered">
+		<thead>
+			<th>Task Name</th>
+			<th>Due Date</th>
+			<th>Group Member</th>
+			<th>Priority</th>
+			<th>Status</th>
+		</thead>
+		<tr ng-repeat="task in tasks">
+			<td>{{task.name}}</td>
+			<td>{{task.date}}</td>
+			<td>{{task.groupMember}}</td>
+			<td>{{task.priority}}</td>
+			<td>{{task.status}}</td>
+		</tr>
+	</table>
 
-<a href="#/groups"><h2>Group Members</h2></a>
-<table class="table table-bordered">
-	<thead>
-		<th>Leader</th>
-		<th>First Name</th>
-		<th>Last Name</th>
-	</thead>
-	<tr ng-repeat="user in users">
-		<td>
-			<span ng-show="user.isLeader" class="glyphicon glyphicon-star"></span>
-		</td><td>{{user.firstName}}</td><td>{{user.lastName}}</td>
-	</tr>
-</table>
+	<a href="#/groups"><h2>Group Members</h2></a>
+	<table class="table table-bordered">
+		<thead>
+			<th>Leader</th>
+			<th>First Name</th>
+			<th>Last Name</th>
+		</thead>
+		<tr ng-repeat="user in users">
+			<td>
+				<span ng-show="user.isLeader" class="glyphicon glyphicon-star"></span>
+			</td><td>{{user.firstName}}</td><td>{{user.lastName}}</td>
+		</tr>
+	</table>
+</div>
