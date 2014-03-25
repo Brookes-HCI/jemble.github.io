@@ -21,10 +21,13 @@
 <a href="#/groups"><h2>Group Members</h2></a>
 <table class="table table-bordered">
 	<thead>
+		<th>Leader</th>
 		<th>First Name</th>
 		<th>Last Name</th>
 	</thead>
 	<tr ng-repeat="user in users">
-		<td>{{user.firstName}}</td><td>{{user.lastName}}</td>
+		<td>
+			<span ng-show="user.isLeader" class="glyphicon glyphicon-star"></span>
+		</td><td>{{user.firstName}}</td><td>{{user.lastName}}</td>
 	</tr>
 </table>
