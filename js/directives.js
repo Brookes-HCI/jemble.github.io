@@ -28,7 +28,7 @@ app.directive('clickToEditGroup',function(){
 			value:'=clickToEditGroup'
 		},
 
-		controller: function($scope,$modal,GroupService, TaskService){
+		controller: function($scope,$modal,$filter,GroupService, TaskService){
 
 			var origVal = angular.copy($scope.value); //copy so that we break the binding
 			$scope.users = GroupService.getUsers();
@@ -65,6 +65,7 @@ app.directive('clickToEditGroup',function(){
             	}
             	$scope.value = $scope.view.editableValue;
             	$scope.value.isLeader = isLeader;
+            	$scope.value.date = $filter('date')($scope.view.editableValue.date, "dd-MMMM-yyyy");
             	$scope.view.editorEnabled = false;
             	
             }
