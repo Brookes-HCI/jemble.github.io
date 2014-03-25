@@ -73,7 +73,7 @@ app.directive('clickToEditGroup',function(){
             	console.log($scope.value);
             	var val = $scope.value;
             	var modal = $modal.open({
-            		template:"<div class='row'><div class='col-md-8'><h4>Are you sure you want to delete this item?</h4><button ng-click='ok()' class='btn btn-primary'>Yes</button><button ng-click='cancel()' class='btn btn-default'>Cancel</button></div><div>",
+            		template:"<div style='padding:15px'><h4>Are you sure you want to delete this item?</h4><button ng-click='ok()' class='btn btn-primary'>Yes</button><button ng-click='cancel()' class='btn btn-default'>Cancel</button></div>",
             		controller:function($scope,$modalInstance){
             			$scope.ok = function(){
             				switch (type){
@@ -90,19 +90,7 @@ app.directive('clickToEditGroup',function(){
             				$modalInstance.dismiss('cancel');
             			}
             		}
-            	});
-            	// var conf = confirm("Are you sure you want to delete this entry?");
-            	// if(conf){
-	            // 	switch (type){
-	            // 		case "group":
-	            // 		GroupService.removeUser($scope.value);
-	            // 		break;
-	            // 		case "tasks":
-	            // 		TaskService.removeTask($scope.value);
-	            // 		break;
-	            // 	}
-	            // }
-            	
+            	});            	
             }
 		},
 
