@@ -79,7 +79,7 @@ app.directive('clickToEditGroup',function(){
             	console.log($scope.value);
             	var val = $scope.value;
             	var modal = $modal.open({
-            		template:"<div style='padding:15px'><h4>Are you sure you want to delete this item?</h4><button ng-click='ok()' class='btn btn-primary'>Yes</button><button ng-click='cancel()' class='btn btn-default'>Cancel</button></div>",
+            		template:"<div style='padding:15px'><h4>Are you sure you want to delete this item?</h4><button ng-click='ok()' class='btn btn-primary' style='margin-right:20px;'>Yes</button><button ng-click='cancel()' class='btn btn-default'>Cancel</button></div>",
             		controller:function($scope,$modalInstance){
             			$scope.ok = function(){
             				switch (type){

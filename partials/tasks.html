@@ -17,16 +17,15 @@
 				<select class="form-control" ng-model="task.groupMember" ng-options="(u.firstName+' '+u.lastName) for u in users"></select>
 			</div>
 			<div class="form-group">
-				<label for="radio_priority">Priority</label>
-				<div class="radio">
-					<input type="radio" name="radio_priority" ng-model="task.priority" value="high">high
-				</div>
-				<div class="radio">
-					<input type="radio" name="radio_priority" ng-model="task.priority" value="med">med
-				</div>
-				<div class="radio">
-					<input type="radio" name="radio_priority" ng-model="task.priority" value="low">low
-				</div>
+				<label for="radio_priority" >Priority</label>
+				<br>
+					<label class="radio-inline">High</label>
+					<input type="radio" name="radio_priority" ng-model="task.priority" value="high">
+					<label class="radio-inline">Med</label>
+					<input type="radio" name="radio_priority" ng-model="task.priority" value="med">
+					<label class="radio-inline">Low</label>
+					<input type="radio" name="radio_priority" ng-model="task.priority" value="low">
+
 			</div>
 			<button type="submit" class="btn btn-default pull-right" ng-click="addTask(task)">Add</button>
 		</form>
