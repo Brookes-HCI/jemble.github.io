@@ -4,16 +4,16 @@
 
 		<form role="form" ng-model="newUser" name="personForm">
 			<div class="form-group">
-				<label for="group_fName_input">First Name</label>
+				<label for="group_fName_input">First Name*</label>
 				
 					<input type="text" class="form-control" name="firstName" id="group_fName_input" required ng-model="newUser.firstName"/>
 				
 			</div>
 			<div class="form-group">
-				<label for="group_lName_input">Last Name</label>
+				<label for="group_lName_input">Last Name*</label>
 				<input type="text" class="form-control" name="lastName" id="group_lName_input" required ng-model="newUser.lastName"/>
 			</div>
-			<button type="submit" class="btn btn-default pull-right" ng-click="addUser(newUser)">Add</button>
+			<button type="submit" ng-disabled="!personForm.$valid" class="btn btn-default pull-right" ng-click="addUser(newUser)">Add</button>
 		</form>
 	</div>
 </div>

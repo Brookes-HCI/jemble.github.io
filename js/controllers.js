@@ -16,6 +16,7 @@ app.controller('NavCtrl',function($scope,$location){
 app.controller('TasksCtrl',function($scope,$filter,TaskService,GroupService){
 	$scope.tasks = TaskService.getTasks();
 	$scope.statuses = TaskService.getStatus();
+
 	
 	$scope.addTask = function(task){
 		
@@ -23,8 +24,9 @@ app.controller('TasksCtrl',function($scope,$filter,TaskService,GroupService){
 		
 		task.status = "open";
 		TaskService.addTask(task);
-		console.log(task);
-		$scope.task = '';
+		
+		$scope.task = {};
+		$scope.taskForm.$setPristine();
 	}
 	
 	$scope.removeTask = function(task){
