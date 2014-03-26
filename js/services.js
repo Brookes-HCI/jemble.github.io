@@ -2,6 +2,17 @@
 
 /*Services*/
 
+app.service('HomeService',function(){
+	var projectTitle = "Your project name";
+	this.getProject = function(){
+		return projectTitle;
+	}
+
+	this.saveProject = function(title){
+		projectTitle = title;
+	}
+})
+
 app.service('GroupService',function(){
 	var users = [
 			{

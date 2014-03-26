@@ -2,10 +2,10 @@
 
 /*Controllers*/
 
-app.controller('HomeCtrl', function($scope, GroupService, TaskService){
+app.controller('HomeCtrl', function($scope, GroupService, TaskService,HomeService){
 	$scope.users = GroupService.getUsers();
 	$scope.tasks = TaskService.getTasks();
-	$scope.project = "your project name";
+	$scope.project = HomeService.getProject();
 })
 
 app.controller('NavCtrl',function($scope,$location){

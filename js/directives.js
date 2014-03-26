@@ -28,13 +28,13 @@ app.directive('clickToEditGroup',function(){
 			value:'=clickToEditGroup'
 		},
 
-		controller: function($scope,$modal,$filter,GroupService, TaskService){
+		controller: function($scope,$modal,$filter,GroupService, TaskService,HomeService){
 
 			var origVal = angular.copy($scope.value); //copy so that we break the binding
 			$scope.users = GroupService.getUsers();
 			$scope.priorities = TaskService.getPriorities();
 			$scope.statuses = TaskService.getStatus();
-			$scope.project = "Your project name";
+			$scope.project = HomeService.getProject();
 
 			$scope.view = {
 				editableValue:$scope.value,
@@ -58,11 +58,16 @@ app.directive('clickToEditGroup',function(){
             };
             $scope.save = function(){
             	var isLeader = $scope.view.editableValue.isLeader;
-            	console.log(isLeader);
+            	// console.log(isLeader);
             	if(type=="group"){
-            		console.log("leaders");
+            		// console.log("leaders");
             		GroupService.clearLeaders();
             	}
+            	if(type=="proj"){
+            		HomeService.saveProject($scope.view.editableValue);
+            	}
+            	console.log($scope.value);
+            	console.log($scope.view.editableValue);
             	$scope.value = $scope.view.editableValue;
             	$scope.value.isLeader = isLeader;
             	$scope.value.date = $filter('date')($scope.view.editableValue.date, "dd-MMMM-yyyy");
