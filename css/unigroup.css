@@ -144,3 +144,17 @@
 .navbar-custom .navbar-link:hover {
   color: #e18a07;
 }
+
+.fader{
+  padding:5px;
+}
+
+.fader.ng-hide-add {
+  opacity: 1.0;
+  display: block !important;
+  transition: opacity 1s;
+}
+
+.fader.ng-hide-add-active {
+  opacity: 0;
+}
