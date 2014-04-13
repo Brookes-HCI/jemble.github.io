@@ -27,7 +27,12 @@
 					<input type="radio" ng-required="true" name="radio_priority" ng-model="task.priority" value="low">
 
 			</div>
-			<button type="submit" ng-disabled="!taskForm.$valid" class="btn btn-default pull-right" ng-click="addTask(task)">Add</button>
+			
+			<div class="form-group">
+				<button type="submit" ng-disabled="!taskForm.$valid" class="btn btn-default pull-right" ng-click="addTask(task)">Add</button>
+				<p ng-show="isAdded" class="bg-success pull-right" style="padding:5px;display:inline">new task added</p>
+			</div>
+
 		</form>
 	</div>
 </div>
